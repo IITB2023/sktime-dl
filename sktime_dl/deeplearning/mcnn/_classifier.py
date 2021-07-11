@@ -230,15 +230,12 @@ class MCNNClassifier(BaseDeepClassifier):
         # print("increase factor is ", increase_num, ', ori len', ori_len)
         valid_num_batch = int(valid_num / increase_num)
 
-        length_train = train_set_x.shape[1]  # length after slicing.
-        print(train_set_x.shape)
-        print(test_set_x.shape)
-        print(length_train)
+        length_train = train_set_x.shape[2]  # length after slicing.
+        
         current_window_size = (
             int(length_train * self.window_size)
         )
-        print(pool_factor)
-        print(current_window_size)
+        
         ds_num_max = length_train / (pool_factor * current_window_size)
         current_ds_num = int(min(self.ds_num, ds_num_max))
 
