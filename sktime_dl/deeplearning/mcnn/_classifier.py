@@ -95,6 +95,8 @@ class MCNNClassifier(BaseDeepClassifier):
         self.ds_num = 4
 
     def slice_data(self, data_x, data_y, slice_ratio):
+        
+        print(data_x.shape)
         n = data_x.shape[0]
         length = data_x.shape[1]
         n_dim = data_x.shape[2]  # for MTS
