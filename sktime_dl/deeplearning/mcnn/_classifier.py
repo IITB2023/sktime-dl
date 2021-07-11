@@ -100,9 +100,9 @@ class MCNNClassifier(BaseDeepClassifier):
         n = data_x.shape[0]
         length = data_x.shape[1]
         n_dim = data_x.shape[2]  # for MTS
-
+        print(length)
         length_sliced = int(length * slice_ratio)
-
+        print(length_sliced)
         increase_num = (
                 length - length_sliced + 1
         )  # if increase_num =5, it means one ori becomes 5 new instances.
@@ -125,6 +125,8 @@ class MCNNClassifier(BaseDeepClassifier):
                         data_y[i].astype(np.float32)
                     )
 
+        print(new_x.shape)
+        print(new_y.shape)
         return new_x, new_y
 
     def _downsample(self, data_x, sample_rate, offset=0):
