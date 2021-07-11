@@ -194,7 +194,7 @@ class MCNNClassifier(BaseDeepClassifier):
             x_train, y_train, test_size=0.2
         )
 
-        ori_len = x_train.shape[1]  # original_length of time series
+        ori_len = max(x_train.shape[1], x_train.shape[0]) 
 
         kernel_size = int(ori_len * filter_size)
 
