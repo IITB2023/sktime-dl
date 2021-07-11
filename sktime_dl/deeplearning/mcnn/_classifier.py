@@ -101,6 +101,8 @@ class MCNNClassifier(BaseDeepClassifier):
         n_dim = data_x.shape[1]  # for MTS
        
         length_sliced = int(length * slice_ratio)
+        
+        data_x = np.reshape(data_x, (n, length, n_dim))
       
         increase_num = (
                 length - length_sliced + 1
