@@ -231,7 +231,9 @@ class MCNNClassifier(BaseDeepClassifier):
         valid_num_batch = int(valid_num / increase_num)
 
         length_train = train_set_x.shape[1]  # length after slicing.
-
+        print(train_set_x.shape)
+        print(test_set_x.shape)
+        print(length_train)
         current_window_size = (
             int(length_train * self.window_size)
         )
