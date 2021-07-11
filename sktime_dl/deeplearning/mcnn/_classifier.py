@@ -197,7 +197,6 @@ class MCNNClassifier(BaseDeepClassifier):
         ori_len = max(x_train.shape[1], x_train.shape[2]) 
 
         kernel_size = int(ori_len * filter_size)
-        print(kernel_size)
 
         # restrict slice ratio when data lenght is too large
         current_slice_ratio = self.slice_ratio
