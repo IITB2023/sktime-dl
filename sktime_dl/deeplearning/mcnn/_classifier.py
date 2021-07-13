@@ -334,6 +334,8 @@ class MCNNClassifier(BaseDeepClassifier):
                 x = self.split_input_for_model(x, self.input_shapes)
 
                 # print('\t pre train batch')
+                print(x.shape)
+                print(y.shape)
                 cost_ij, accuracy = model.train_on_batch(x, y)
                 # print('\t post train batch')
 
